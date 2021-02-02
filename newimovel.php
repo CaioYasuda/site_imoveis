@@ -14,7 +14,7 @@
         <div class="offset-md-4 col-md-4 new-movie-container">
             <h1 class="page-title">Adicionar Imóvel</h1>
             <p class="page-description">Adicione seu imóvel</p>
-            <form action="<?= $BASE_URL?>movie_process.php" id="add-movie-form" method="POST" enctype="multipart/form-data">
+            <form action="<?= $BASE_URL?>imovel_process.php" id="add-movie-form" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="type" value="create">
                 <div class="form-group">
                     <label for="title">Título:</label>
@@ -28,11 +28,26 @@
                     <label for="city">Cidade:</label>
                     <input type="text" class="form-control" id="city" name="city" placeholder="Digite a cidade do imóvel">
                 </div>
-                
+                <div class="form-group">
+                    <input type="checkbox" id="Piscina" name="Piscina" value="Piscina">
+                    <label for="Piscina"> Piscina</label><br>
+                    <input type="checkbox" id="Estacionamento" name="Estacionamento" value="Estacionamento">
+                    <label for="Estacionamento"> Estacionamento Coberto</label><br>
+                    <input type="checkbox" id="Portaria" name="Portaria" value="Bike">
+                    <label for="Portaria"> Portaria 24h</label><br>
+                </div>
                 <div class="form-group">
                     <label for="image">Imagem:</label>
                     <input type="file" class="form-control-file" name="image" id="image">
                 </div>
+                <!--<div class="form-group">
+                    <label for="image_2">Imagem 2:</label>
+                    <input type="file" class="form-control-file" name="image_2" id="image_2">
+                </div>
+                <div class="form-group">
+                    <label for="image_3">Imagem 3:</label>
+                    <input type="file" class="form-control-file" name="image_3" id="image_3">
+                </div>-->
                 <div class="form-group">
                     <label for="length">Metragem:</label>
                     <input type="text" class="form-control" id="measure" name="measure" placeholder="Digite a metragem do imóvel">

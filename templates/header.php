@@ -52,15 +52,15 @@
                 <ul class="navbar-nav">
                     <?php if($userData): ?>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="<?= $BASE_URL?>newimovel.php" class="nav-link">
                                 <i class="far fa-plus-square"></i> Incluir imóvel
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Meus imóveis</a>
+                            <a href="<?= $BASE_URL?>dashboard.php" class="nav-link">Meus imóveis</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link bold">
+                            <a href="<?= $BASE_URL?>editprofile.php" class="nav-link bold">
                                 <?= $userData->name ?>
                             </a>
                         </li>

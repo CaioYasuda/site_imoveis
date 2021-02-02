@@ -15,8 +15,8 @@
         <div id="footer-links-container">
             <ul>
                 <li><a href="#">Agenda</a></li>
-                <li><a href="#">Anuncie seu imovel</a></li>
-                <li><a href="#">Entrar / Registar</a></li>
+                <li><a href="<?= $BASE_URL?>newimovel.php">Anuncie seu imovel</a></li>
+                <li><a href="<?= $BASE_URL?>auth.php">Entrar / Registar</a></li>
             </ul>
         </div>
         <p>&copy; 2021 Caio Yasuda</p>
