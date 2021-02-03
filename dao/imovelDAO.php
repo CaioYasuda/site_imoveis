@@ -23,6 +23,7 @@
             $imovel = new Imovel();
 
             $imovel->id = $data["id"];
+            $imovel->title = $data["title"];
             $imovel->address = $data["address"];
             $imovel->city = $data["city"];
             $imovel->measure = $data["measure"];
@@ -127,6 +128,31 @@
 
         public function update(Imovel $Imovel) {
 
+            $stmt = $this->conn->prepare("UPDATE properties SET 
+                title = :title,
+                address = :address,
+                city = :city,
+                measure = :measure,
+                category = :category,
+                trailer = :trailer,
+                description = :description 
+                WHERE id = :id
+            ");
+
+            $stmt->bindParam(":title", $imovel->title);
+            $stmt->bindParam(":address", $imovel->address);
+            $stmt->bindParam(":city", $imovel->city);
+            $stmt->bindParam(":measure", $imovel->measure);
+            $stmt->bindParam(":category", $imovel->category);
+            $stmt->bindParam(":trailer", $imovel->trailer);
+            $stmt->bindParam(":description", $imovel->description);
+            $stmt->bindParam(":id", $imovel->id);
+
+            $stmt->execute();
+
+            //Mensagem de anuncio alterado
+            $this->message->setMessage("Anuncio atualizado com sucesso!", "success", "dashboard.php");
+     
         }
 
         public function destroy($id) {
