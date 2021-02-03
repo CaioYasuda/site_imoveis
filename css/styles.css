@@ -306,6 +306,16 @@
     color: #DC3545;
 }
 
+/*EDITIMOVEL*/
+.page-description-edit {
+    text-align: center;
+}
+
+.page-title {
+    text-align: center;
+}
+
+
 /*FOOTER*/
 #footer {
     background-color: rgb(189, 184, 184);

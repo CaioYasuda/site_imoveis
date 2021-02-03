@@ -63,7 +63,7 @@
                     }
 
                     //Gerando o nome da imagem
-                    $imageName = $movie->imageGenerateName();
+                    $imageName = $imovel->imageGenerateName();
 
                     imagejpeg($imageFile, "./img/movies/" . $imageName, 100);
 
@@ -104,7 +104,7 @@
 
     } elseif ($type === "update"){
 
-
+        
 
     }
 

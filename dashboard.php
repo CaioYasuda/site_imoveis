@@ -19,7 +19,7 @@
         <h2 class="section-title">Dashboard</h2>
         <p class="section-description">Adicione ou atualize as informações dos imóveis anunciados</p>
         <div class="col-md-12" id="add-movie-container">
-            <a href="<?=$BASE_URL?>newmovie.php" class="btn card-btn">
+            <a href="<?=$BASE_URL?>newimovel.php" class="btn card-btn">
                 <i class="fas fa-plus"></i> Adicionar imóvel
             </a>
         </div>
@@ -38,7 +38,7 @@
                         <td><a href="#" class="table-movie-title"><?= $imovel->title ?></a></td>
                         <td><i class="fas fa-star"></i>2 propostas</td>
                         <td class="actions-column">
-                            <a href="#" class="edit-btn">
+                            <a href="<?=$BASE_URL?>editimovel.php?id=<?= $imovel->id?>" class="edit-btn">
                                 <i class="far fa-edit"></i> Editar
                             </a>
                             <form action="<?=$BASE_URL?>imovel_process.php" method="POST">
