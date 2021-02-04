@@ -43,6 +43,16 @@
     box-shadow: none;
 }
 
+.propose {
+    padding-top: 15px;
+}
+
+.form-control {
+    border: none;
+    width: 90%;
+    box-shadow: none;
+}
+
 #navbar {
     min-width: 30%;
 }
@@ -313,6 +323,72 @@
 
 .page-title {
     text-align: center;
+}
+
+/*IMOVEL*/
+.movie-container{
+    text-align: center;
+}
+
+.page-title-imovel {
+    text-align: center;
+}
+
+.propose-form {
+    background-color: #333;
+    padding: 20px;
+    width: 50%;
+}
+
+.movie-details {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.description-propertie {
+    text-align: center;
+    margin-left: 40px;
+}
+
+.pipe {
+    border: 1px solid #333;
+    margin: 0 10px;
+}
+
+#review-title {
+    margin-bottom: 25px;
+}
+
+#review-form-container {
+    padding: 20px;
+}
+
+#review-form-container select,
+#review-form-container textarea {  
+    width: 50%;
+}
+
+#reviews-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 4px solid #f5c518;
+}
+
+.review {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+    padding-top: 20px;
+}
+
+.author-name a {
+    color: #f5c518;
+}
+
+.comment-title {
+    color: #999;
 }
 
 

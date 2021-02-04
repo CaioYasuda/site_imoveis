@@ -35,7 +35,7 @@
                     <?php foreach($userImoveis as $imovel): ?>
                     <tr>
                         <td scope="row"><?= $imovel->id ?></td>
-                        <td><a href="#" class="table-movie-title"><?= $imovel->title ?></a></td>
+                        <td><a href="<?=$BASE_URL?>imovel.php?id=<?= $imovel->id?>" class="table-movie-title"><?= $imovel->title ?></a></td>
                         <td><i class="fas fa-star"></i>2 propostas</td>
                         <td class="actions-column">
                             <a href="<?=$BASE_URL?>editimovel.php?id=<?= $imovel->id?>" class="edit-btn">
