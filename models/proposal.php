@@ -18,7 +18,7 @@
     interface ProposalDAOInterface {
 
         public function buildProposal($data);
-        public function create(Proposta $proposal);
+        public function create(Proposal $proposal);
         public function getPropertieProposal($data);
         public function hasAlreadyProposed($id, $users_id);
         public function getPropose($data);

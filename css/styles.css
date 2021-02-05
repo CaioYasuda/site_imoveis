@@ -33,7 +33,7 @@
     margin: 0 auto;
     background-color: #fff;
     border-radius: 5px;
-    width: 50%;
+    width: 60%;
     margin-left: 180px;
 }
 
@@ -45,6 +45,17 @@
 
 .propose {
     padding-top: 15px;
+}
+
+.proposed-msg {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px #000;
+    text-align: center;
+    color: #0f5132;
+    background-color: #5c8673;
 }
 
 .form-control {

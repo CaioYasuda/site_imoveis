@@ -79,7 +79,7 @@
                 <?php if (!empty($userData) && !$userOwnsPropertie && !$alreadyProposed): ?>
                 <div class="col-md-12" id="review-form-container">
                     <h4>Envie sua Proposta</h4>
-                    <form action="#" id="propose-form" class="propose-form" method="POST">
+                    <form action="<?= $BASE_URL?>propose_process.php" id="propose-form" class="propose-form" method="POST">
                         <input type="hidden" name="type" value="create">
                         <input type="hidden" name="properties_id" value="<?= $imovel->id?>">
                         <div class="form-group">
@@ -103,7 +103,11 @@
                         <input type="submit" class="btn card-btn" value="Enviar Proposta">
                     </form>
                 </div>
-                <?php endif; ?> 
+                <?php else: ?> 
+                    <div class="msg-container">
+                    <h6 class="proposed-msg">Você já enviou uma proposta e a mesma se encontra em analise</h6>
+                    </div>
+                <?php endif;?>
             </div>
         </div>
     </div>

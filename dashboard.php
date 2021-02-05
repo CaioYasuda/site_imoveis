@@ -2,12 +2,14 @@
 
     require_once("templates/header.php");
     require_once("dao/UserDAO.php");
+    require_once("dao/proposalDAO.php");
     require_once("dao/imovelDAO.php");
     require_once("models/user.php");
 
     $user = new User();
     $userDAO = new UserDAO($conn, $BASE_URL);
     $imovelDAO = new imovelDAO($conn, $BASE_URL);
+    $proposalDAO = new ProposalDAO($conn, $BASE_URL);
 
     $userData = $userDAO->verifyToken(true);
 
@@ -36,7 +38,7 @@
                     <tr>
                         <td scope="row"><?= $imovel->id ?></td>
                         <td><a href="<?=$BASE_URL?>imovel.php?id=<?= $imovel->id?>" class="table-movie-title"><?= $imovel->title ?></a></td>
-                        <td><i class="fas fa-star"></i>2 propostas</td>
+                        <td><a href="<?=$BASE_URL?>proposeList.php?id=<?= $imovel->id?>" class="table-movie-title">Proposta</a></td>
                         <td class="actions-column">
                             <a href="<?=$BASE_URL?>editimovel.php?id=<?= $imovel->id?>" class="edit-btn">
                                 <i class="far fa-edit"></i> Editar
