@@ -38,7 +38,7 @@
                     <tr>
                         <td scope="row"><?= $imovel->id ?></td>
                         <td><a href="<?=$BASE_URL?>imovel.php?id=<?= $imovel->id?>" class="table-movie-title"><?= $imovel->title ?></a></td>
-                        <td><a href="<?=$BASE_URL?>proposeList.php?id=<?= $imovel->id?>" class="table-movie-title">Proposta</a></td>
+                        <td><a href="<?=$BASE_URL?>proposeList.php?id=<?= $imovel->id?>" class="table-movie-title">Propostas</a></td>
                         <td class="actions-column">
                             <a href="<?=$BASE_URL?>editimovel.php?id=<?= $imovel->id?>" class="edit-btn">
                                 <i class="far fa-edit"></i> Editar

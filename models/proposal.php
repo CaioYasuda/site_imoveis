@@ -22,6 +22,9 @@
         public function getPropertieProposal($data);
         public function hasAlreadyProposed($id, $users_id);
         public function getPropose($data);
+        public function proposalByImovel($id);
+        public function buildImovel($data);
+        public function getPropertirById($id);
 
     }
 

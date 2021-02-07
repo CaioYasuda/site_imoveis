@@ -23,9 +23,9 @@
         public function create(Proposal $proposal) {
 
             $stmt = $this->conn->prepare("INSERT INTO tenders (
-                name_buyer, lastname_buyer, value, cpf_buyer, phone_buyer, email_buyer, observations, properties_id, users_id, propertieOwner
+                name_buyer, lastname_buyer, value, cpf_buyer, phone_buyer, email_buyer, observations, properties_id, users_id
             ) VALUES (
-                :name_buyer, :lastname_buyer, :value, :cpf_buyer, :phone_buyer, :email_buyer, :observations, :properties_id, :users_id, :propertieOwner
+                :name_buyer, :lastname_buyer, :value, :cpf_buyer, :phone_buyer, :email_buyer, :observations, :properties_id, :users_id
             )");
 
             $stmt->bindParam(":name_buyer", $proposal->name_buyer);
@@ -37,7 +37,6 @@
             $stmt->bindParam(":observations", $proposal->observations);
             $stmt->bindParam(":properties_id", $proposal->properties_id);
             $stmt->bindParam(":users_id", $proposal->users_id);
-            $stmt->bindParam(":propertieOwner", $proposal->propertieOwner);
 
             $stmt->execute();
 
@@ -81,11 +80,62 @@
 
         }
 
-        public function proposalByUser() {
+        public function proposalByImovel($id) {
 
+            $properties = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM tenders WHERE properties_id = :properties_id");
 
+            $stmt->bindParam(":properties_id", $id);
 
+            $stmt->execute();
+
+            $propertieData = $stmt->fetchAll();
+
+            return $propertieData;
+
+        }
+
+        public function buildImovel($data) {
+
+            $imovel = new Imovel();
+
+            $imovel->id = $data["id"];
+            $imovel->title = $data["title"];
+            $imovel->address = $data["address"];
+            $imovel->city = $data["city"];
+            $imovel->measure = $data["measure"];
+            $imovel->category = $data["category"];
+            $imovel->trailer = $data["trailer"];
+            $imovel->description = $data["description"];
+            $imovel->image = $data["image"];
+            $imovel->users_id = $data["users_id"];
+
+            return $imovel;
+
+        }
+
+        public function getPropertirById($id) {
+
+            $propertieData = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM properties WHERE id = :id");
+
+            $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $propertieData = $stmt->fetch();
+
+                $propertie = $this->buildImovel($propertieData);
+
+                return $propertie;
+
+            } else {
+                return false;
+            }
 
         }
 

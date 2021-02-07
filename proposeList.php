@@ -6,15 +6,23 @@
     require_once("dao/proposalDAO.php");
     require_once("models/user.php");
 
+    $ProposalDAO = new ProposalDAO($conn, $BASE_URL);
+
     //Resgatar dados do usuario
     $userData = $userDAO->verifyToken(true);
 
-    $proposes = $proposalDAO->proposalByUser();
+    // Pegar id do imovel
+    $id = filter_input(INPUT_GET, "id");
+
+    //Consulta dos propostas
+    $proposes = $ProposalDAO->proposalByImovel($id);
+
+    $propertie = $ProposalDAO->getPropertirById($id);
 
 ?>
 
     <div class="container-list">
-        <h1 id="main-title">Minhas propostas</h1>
+        <h1 class="titpropose">Propostas para <?=$propertie->title?></h1>
         <?php if (count($proposes) > 0): ?>
             <table class="table" id="contacts-table">
                 <thead>
@@ -25,7 +33,6 @@
                         <th scope="col">Telefone</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Observações</th>
-                        <th scope="col">Imóvel</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,18 +42,17 @@
                                 $namecomplet = ($propose["name_buyer"] . " " . $propose["lastname_buyer"]);
                             ?>
                             <td scope="row" class="col-id"><?=$namecomplet?></td>
-                            <td scope="row"><?=$propose["value"]?></td>
+                            <td scope="row">R$<?=$propose["value"]?></td>
                             <td scope="row"><?=$propose["cpf_buyer"]?></td>
                             <td scope="row"><?=$propose["phone_buyer"]?></td>
                             <td scope="row"><?=$propose["email_buyer"]?></td>
                             <td scope="row"><?=$propose["observations"]?></td>
-                            <td scope="row">link do imovel</td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>
             </table>
         <?php else: ?>
-            <p id="empty-list-text">Ainda não há contatos na sua agenda, <a href="<?=$BASE_URL ?>Create.php">clique aqui para adicionar</a>.</p>
+            <p id="empty-list-text">Ainda não há propostas para o seu imóvel</p>
         <?php endif; ?>
     </div>
 

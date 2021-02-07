@@ -60,7 +60,7 @@
 
 .form-control {
     border: none;
-    width: 90%;
+    width: 100%;
     box-shadow: none;
 }
 
@@ -240,6 +240,7 @@
 
 .page-description {
     color: #999;
+    text-align: center;
 }
 
 #bio {
@@ -327,6 +328,39 @@
     color: #DC3545;
 }
 
+/*PROPOSELIST*/
+#contacts-table {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1.5px solid rgb(0, 0, 0);
+}
+
+#contacts-table thead {
+    color: #fff;
+    background-color: rgb(109, 109, 109);
+}
+
+.titpropose {
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 15px;
+    padding-top: 25px;
+}
+
+.col-id {
+    font-weight: bold;
+}
+
+#empty-list-text {
+    text-align: center;
+}
+
+.container-list {
+    background-color:  rgb(189, 184, 184) ;
+    padding-bottom: 60px;
+}
+
 /*EDITIMOVEL*/
 .page-description-edit {
     text-align: center;
@@ -349,6 +383,7 @@
     background-color: #333;
     padding: 20px;
     width: 50%;
+    color: #fff;
 }
 
 .movie-details {
@@ -371,7 +406,7 @@
 }
 
 #review-form-container {
-    padding: 20px;
+    padding: 10px;
 }
 
 #review-form-container select,
@@ -381,8 +416,12 @@
 
 #reviews-container {
     margin-top: 20px;
-    padding-top: 20px;
     border-top: 4px solid #f5c518;
+}
+
+.enviepropose {
+    font-size: 30px;
+    padding-bottom: 15px;
 }
 
 .review {

@@ -74,11 +74,10 @@
                 <p><?= $imovel->description ?></p>
             </div> 
             <div class="offset-md-1 col-md-10" id="reviews-container">
-                <h3 id="reviews-title">Propostas: </h3>
                 <!-- Verifica se habilita a review para o usuario ou não -->
                 <?php if (!empty($userData) && !$userOwnsPropertie && !$alreadyProposed): ?>
                 <div class="col-md-12" id="review-form-container">
-                    <h4>Envie sua Proposta</h4>
+                    <h4 class="enviepropose">Envie sua proposta:</h4>
                     <form action="<?= $BASE_URL?>propose_process.php" id="propose-form" class="propose-form" method="POST">
                         <input type="hidden" name="type" value="create">
                         <input type="hidden" name="properties_id" value="<?= $imovel->id?>">
