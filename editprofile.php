@@ -24,7 +24,7 @@
                 <input type="hidden" name="type" value="update">
                 <div class="row">
                     <div class="col-md-4">
-                        <h1><?=$fullname ?></h1>
+                        <h1 class="page-title"><?=$fullname ?></h1>
                         <p class="page-description">Altere seus dados no formulario abaixo:</p>
                         <div class="form-group">
                             <label for="name">Nome: </label>

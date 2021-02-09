@@ -8,14 +8,14 @@
     // Pegar id do imovel
     $id = filter_input(INPUT_GET, "id");
 
-    $imove;
+    $imovel;
 
     $imovelDAO = new ImovelDAO($conn, $BASE_URL);
     $ProposalDAO = new ProposalDAO($conn, $BASE_URL);
 
     if (empty($id)) {
 
-        $message->setMessage("O filme não foi encontrado", "error", "index.php");
+        $message->setMessage("O imóvel não foi encontrado", "error", "index.php");
 
     } else {
 
@@ -24,7 +24,7 @@
         //Verifica se o imovel existe
         if (!$imovel) {
 
-            $message->setMessage("O filme não foi encontrado", "error", "index.php");
+            $message->setMessage("O imóvel2 não foi encontrado", "error", "index.php");
 
         }
 
@@ -57,7 +57,7 @@
     <div id="main-container" class="container-fluid">
         <h1 class="page-title-imovel"><?= $imovel->title?></h1>
         <p class="movie-details">
-            <span>Metragem: <?= $imovel->measure?></span>
+            <span>Metragem: <?= $imovel->measure?>m²</span>
             <span class="pipe"></span>
             <span><?= $imovel->category?></span>
             <span class="pipe"></span>

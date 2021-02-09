@@ -30,6 +30,9 @@
             $imovel->category = $data["category"];
             $imovel->trailer = $data["trailer"];
             $imovel->description = $data["description"];
+            $imovel->rooms = $data["rooms"];
+            $imovel->wc = $data["wc"];
+            $imovel->value = $data["value"];
             $imovel->image = $data["image"];
             $imovel->users_id = $data["users_id"];
 
@@ -43,9 +46,46 @@
 
         public function getLastestImovel() {
 
+            $imoveis = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM properties ORDER BY id DESC");
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $imovelArray = $stmt->fetchAll();
+
+                foreach($imovelArray as $imovel) {
+                    $imoveis[] = $this->buildImovel($imovel);
+                }
+
+            }
+
+            return $imoveis;
+
         }
 
         public function getImovelByCategory($category) {
+
+            $imoveis = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM properties WHERE category = :category ORDER BY id DESC");
+
+            $stmt->bindParam(":category", $category);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $imoveisArray = $stmt->fetchAll();
+
+                foreach($imoveisArray as $imovel) {
+                    $imoveis[] = $this->buildImovel($imovel);
+                }
+            }
+
+            return $imoveis;
 
         }
 
@@ -104,9 +144,9 @@
         public function create(imovel $imovel) {
 
             $stmt = $this->conn->prepare("INSERT INTO properties (
-                title, address, city, measure, category, trailer, description, image, users_id
+                title, address, city, measure, category, trailer, description, image, users_id, rooms, wc, value
             ) VALUES (
-                :title, :address, :city, :measure, :category, :trailer, :description, :image, :users_id
+                :title, :address, :city, :measure, :category, :trailer, :description, :image, :users_id, :rooms, :wc, :value
             )");
 
             $stmt->bindParam(":title", $imovel->title);
@@ -116,6 +156,9 @@
             $stmt->bindParam(":category", $imovel->category);
             $stmt->bindParam(":trailer", $imovel->trailer);
             $stmt->bindParam(":description", $imovel->description);
+            $stmt->bindParam(":rooms", $imovel->rooms);
+            $stmt->bindParam(":wc", $imovel->wc);
+            $stmt->bindParam(":value", $imovel->value);
             $stmt->bindParam(":image", $imovel->image);
             $stmt->bindParam(":users_id", $imovel->users_id);
 
@@ -126,7 +169,7 @@
 
         }
 
-        public function update(Imovel $Imovel) {
+        public function update(Imovel $ImovelData) {
 
             $stmt = $this->conn->prepare("UPDATE properties SET 
                 title = :title,
@@ -135,18 +178,24 @@
                 measure = :measure,
                 category = :category,
                 trailer = :trailer,
-                description = :description 
+                description = :description ,
+                rooms = :rooms ,
+                wc = :wc ,
+                value = :value 
                 WHERE id = :id
             ");
 
-            $stmt->bindParam(":title", $imovel->title);
-            $stmt->bindParam(":address", $imovel->address);
-            $stmt->bindParam(":city", $imovel->city);
-            $stmt->bindParam(":measure", $imovel->measure);
-            $stmt->bindParam(":category", $imovel->category);
-            $stmt->bindParam(":trailer", $imovel->trailer);
-            $stmt->bindParam(":description", $imovel->description);
-            $stmt->bindParam(":id", $imovel->id);
+            $stmt->bindParam(":title", $imovelData->title);
+            $stmt->bindParam(":address", $imovelData->address);
+            $stmt->bindParam(":city", $imovelData->city);
+            $stmt->bindParam(":measure", $imovelData->measure);
+            $stmt->bindParam(":category", $imovelData->category);
+            $stmt->bindParam(":trailer", $imovelData->trailer);
+            $stmt->bindParam(":description", $imovelData->description);
+            $stmt->bindParam(":rooms", $imovelData->rooms);
+            $stmt->bindParam(":wc", $imovelData->wc);
+            $stmt->bindParam(":value", $imovelData->value);
+            $stmt->bindParam(":id", $imovelData->id);
 
             $stmt->execute();
 

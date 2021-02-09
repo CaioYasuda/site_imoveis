@@ -27,11 +27,12 @@
 
 #main-navbar {
     background-color:rgb(189, 184, 184);
+    border-bottom: 2px solid #000;
 }
 
 #search-form {
     margin: 0 auto;
-    background-color: #fff;
+    background-color: rgb(189, 184, 184);;
     border-radius: 5px;
     width: 60%;
     margin-left: 180px;
@@ -41,6 +42,7 @@
     border: none;
     width: 90%;
     box-shadow: none;
+    border: 1px solid #000;
 }
 
 .propose {
@@ -62,6 +64,7 @@
     border: none;
     width: 100%;
     box-shadow: none;
+    border: 1px solid #000;
 }
 
 #navbar {
@@ -87,7 +90,7 @@
 }
 
 .msg-container {
-    background-color: rgb(189, 184, 184);
+    background-color: #fff;
     padding: 15px;
 }
 
@@ -113,9 +116,10 @@
 
 /*HOME*/
 #main-container {
-    background-color: rgb(189, 184, 184);
+    background-color: rgb(238, 238, 238);
     color: #000;
     min-height: 65vh;
+    padding-top: 15px;
     padding: 40px;
 }
 
@@ -127,7 +131,7 @@
 }
 
 .section-description {
-    color: #ccc;
+    color: #000;
     font-size: 12px;
 }
 
@@ -139,10 +143,33 @@
 
 .movie-card {
     background-color: #1a1a1a;
-    width: 18%;
+    width: 23%;
     margin-bottom: 30px;
     margin-left: 1%;
     margin-right: 1%;
+}
+
+.card-img-icons {
+    background-color: #fff;
+    border-radius: 5%;
+}
+
+.card-img-icon {
+    padding: 5px;
+    background-position: center;
+    margin-left: 15px;
+}
+
+.measure {
+    margin-left: 35px;
+}
+
+.imovel-category {
+    color: #f5c518;
+}
+
+.imovel-category2 {
+    color: #fff;
 }
 
 .movie-card .card-img-top {
@@ -156,9 +183,15 @@
     height: 3rem;
 }
 
+.description {
+    text-align: center;
+    margin: 8px;
+}
+
 .card-title a {
     font-size: 16px;
-    color: #fff;
+    color: #000;
+    text-align: center;
 }
 
 .fas.fa-star {
@@ -214,6 +247,7 @@
     background-color: #f5c518;
     border: 2px solid #f5c518;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .card-btn:hover{
@@ -239,7 +273,7 @@
 }
 
 .page-description {
-    color: #999;
+    color: #fff;
     text-align: center;
 }
 
@@ -268,7 +302,7 @@
 }
 
 #movies-dashboard .table {
-    color: #FFF;
+    color: #000;
 }
 
 #movies-dashboard .table th {
@@ -280,7 +314,7 @@
 }
 
 .table-movie-title {
-    color: #FFF;
+    color: #000;
     font-weight: bold;
     transition: .5s;
 }
@@ -359,6 +393,7 @@
 .container-list {
     background-color:  rgb(189, 184, 184) ;
     padding-bottom: 60px;
+    min-height: 400px;
 }
 
 /*EDITIMOVEL*/
@@ -399,6 +434,11 @@
 .pipe {
     border: 1px solid #333;
     margin: 0 10px;
+}
+
+.pipe2 {
+    border: 1px solid #333;
+    margin: 0 12px;
 }
 
 #review-title {
@@ -449,6 +489,7 @@
     text-align: center;
     margin: 0;
     padding: 20px;
+    border-top: 2px solid #000;
 }
 
 #social-container ul,

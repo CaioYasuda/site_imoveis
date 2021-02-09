@@ -31,7 +31,7 @@
         public function findById($id);
         public function findByTitle($title);
         public function create(Imovel $imovel);
-        public function update(Imovel $Imovel);
+        public function update(Imovel $ImovelData);
         public function destroy($id);
 
     }

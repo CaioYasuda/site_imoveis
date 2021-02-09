@@ -24,12 +24,13 @@
         $address = filter_input(INPUT_POST, "address");
         $city = filter_input(INPUT_POST, "city");
         $image = filter_input(INPUT_POST, "image");
-        /*$image_2 = filter_input(INPUT_POST, "image_2");
-        $image_3 = filter_input(INPUT_POST, "image_3");*/
         $measure = filter_input(INPUT_POST, "measure");
         $category = filter_input(INPUT_POST, "category");
         $trailer = filter_input(INPUT_POST, "trailer");
         $description = filter_input(INPUT_POST, "description");
+        $rooms = filter_input(INPUT_POST, "rooms");
+        $wc = filter_input(INPUT_POST, "wc");
+        $value = filter_input(INPUT_POST, "value");
 
         $imovel = new Imovel();
 
@@ -43,7 +44,11 @@
             $imovel->category = $category;
             $imovel->trailer = $trailer;
             $imovel->description = $description;
+            $imovel->rooms = $rooms;
+            $imovel->wc = $wc;
+            $imovel->value = $value;
             $imovel->users_id = $userData->id;
+            
 
             //Upload de imagem do imovel
             if (isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
@@ -65,7 +70,7 @@
                     //Gerando o nome da imagem
                     $imageName = $imovel->imageGenerateName();
 
-                    imagejpeg($imageFile, "./img/movies/" . $imageName, 100);
+                    imagejpeg($imageFile, "./img/imoveis/" . $imageName, 100);
 
                     $imovel->image = $imageName;
 
@@ -112,6 +117,9 @@
         $category = filter_input(INPUT_POST, "category");
         $trailer = filter_input(INPUT_POST, "trailer");
         $description = filter_input(INPUT_POST, "description");
+        $rooms = filter_input(INPUT_POST, "rooms");
+        $wc = filter_input(INPUT_POST, "wc");
+        $value = filter_input(INPUT_POST, "value");
         $image = filter_input(INPUT_POST, "image");
         $id = filter_input(INPUT_POST, "id");
 
@@ -134,6 +142,10 @@
                     $imovelData->category = $category;
                     $imovelData->trailer = $trailer;
                     $imovelData->description = $description;
+                    $imovelData->rooms = $rooms;
+                    $imovelData->wc = $wc;
+                    $imovelData->value = $value;
+                    $imovelData->id = $id;
                     
                     //Upload de imagem do filme
                     if (isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
@@ -152,12 +164,10 @@
                                 $imageFile = imagecreatefrompng($image["tmp_name"]);
                             }
 
-                            //Gerando o nome da imagem
-                            $movie = new Movie();
-                            
+                            //Gerando o nome da imagem                            
                             $imageName = $imovel->imageGenerateName();
 
-                            imagejpeg($imageFile, "./img/movies/" . $imageName, 100);
+                            imagejpeg($imageFile, "./img/imoveis/" . $imageName, 100);
 
                             $imovelData->image = $imageName;
 

@@ -21,6 +21,18 @@
                     <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título do imóvel">
                 </div>
                 <div class="form-group">
+                    <label for="rooms">Quartos:</label>
+                    <input type="text" class="form-control" id="rooms" name="rooms" placeholder="Digite a quantidade de quartos do imóvel">
+                </div>
+                <div class="form-group">
+                    <label for="wc">Toaletes:</label>
+                    <input type="text" class="form-control" id="wc" name="wc" placeholder="Digite a quantidade de toaletes do imóvel">
+                </div>
+                <div class="form-group">
+                    <label for="value">Valor:</label>
+                    <input type="text" class="form-control" id="value" name="value" placeholder="Digite o valor do imóvel">
+                </div>
+                <div class="form-group">
                     <label for="address">Endereço:</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="Digite o endereço do imóvel">
                 </div>
@@ -49,7 +61,7 @@
                     <input type="file" class="form-control-file" name="image_3" id="image_3">
                 </div>-->
                 <div class="form-group">
-                    <label for="length">Metragem:</label>
+                    <label for="length">Metragem (m²):</label>
                     <input type="text" class="form-control" id="measure" name="measure" placeholder="Digite a metragem do imóvel">
                 </div>
                 <div class="form-group">

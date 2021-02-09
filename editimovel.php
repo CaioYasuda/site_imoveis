@@ -42,7 +42,7 @@
     <div id="main-container" class="container-fluid">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-6 offset-md-1">
+                <div class="col-md-6 offset-md-3">
                     <h1 class="page-title"><?= $imovel->title?></h1>
                     <p class="page-description-edit">Altere os dados do imóvel no formulário abaixo:</p>
                     <form id="edit-movie-form" action="<?=$BASE_URL?>imovel_process.php" method="POST" ectype="multipart/form-data">
@@ -51,6 +51,18 @@
                         <div class="form-group">
                             <label for="title">Título:</label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título do seu anuncio" value="<?=$imovel->title?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="rooms">Quartos:</label>
+                            <input type="text" class="form-control" id="rooms" name="rooms" placeholder="Digite a quantidade de quartos do imóvel" value="<?=$imovel->rooms?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="wc">Toaletes:</label>
+                            <input type="text" class="form-control" id="wc" name="wc" placeholder="Digite a quantidade de toaletes do imóvel" value="<?=$imovel->wc?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="value">Valor:</label>
+                            <input type="text" class="form-control" id="value" name="value" placeholder="Digite o valor do seu anuncio" value="<?=$imovel->value?>">
                         </div>
                         <div class="form-group">
                             <label for="address">Endereço:</label>
